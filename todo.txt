@@ -1,0 +1,51 @@
+Health
+Hunger
+    Each person spawns in with a daily hunger requirement 3-6
+Thirst
+    Each person spawns in with a daily thirst requirement 2-4
+Sanity
+    Each person spawns in with a daily sanity requirement 2-5
+
+Everything can be bought or sold.
+    So that's all of your actions per turn. Buying or selling things. You sell your time to get money. 
+
+The only way you can fulfill these things is thorugh the free market.
+
+How do I create a challenge for the player systemically? 
+    What if I create a hundred versions of the player and that's who the player is secretly competing with?
+
+What does it mean to be homeless?
+    You lose health otherwise.
+
+Social Capital
+    Is it contextual?
+
+Stores only ever cost 1T but are more expensive for each tier per hunger or thirst but do give differing sanity according to your preferences. And you can stock up on this.
+Store 1 $
+Store 2 $$
+Store 3 $$$
+
+Always get a social every time you go to a restaurant. And your thirst is always replenished. 
+Restaurant 1 $ / T
+    Vegan  2 / 1
+    Meat  1.5 / 3
+    Mixed 1   / 2
+Restaurant 2 $$  TT
+Restaurant 3 $$$ TTT
+
+Work
+    low 1
+    mid 2
+    high 
+
+Social 
+    1 low
+    10  mid
+    100 high
+
+
+TO DO
+    Spawn with an amount of time that you have.
+    Spawn with a hunger, thirst, and sanity requirement.
+    Spawn with sanity preferences of type of food at a restaurant. +2, +1, +0
+    Buy/Sell (food, restuarants, work, social)    
