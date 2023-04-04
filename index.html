@@ -12,14 +12,31 @@
 	</style>
 </head>
 <body>
-	<div>
-		<button id="nextDay" class="verb0">+</button>
-		day: <span id="day"></span>		
-		hours: <span id="hours"></span> [<span id='time'></span>] 		
-		hunger: [<span id="food"></span>] <span id='hunger'></span>/<span id="hungerReq"></span>
-		thirst: [<span id="water"></span>] <span id='thirst'></span>/<span id="thirstReq"></span>		
-		money: $<span id="money"></span>
-		social: <span id="social"></span>
+	<div class="row">		
+		<div class="col text-center">
+			
+			day: <span id="day"></span>		
+			<button id="nextDay" class="verb0 btn btn-link">[ next ]</button>
+		</div><div class="col text-center">
+			hours: <span id="hours"></span> [<span id='time'></span>] 		
+			<span id="hoursDelta"></span>
+		</div>
+	</div><div class='row'>
+		<div class="col text-center">
+			hunger: [<span id="food"></span>] <span id='hunger'></span>/<span id="hungerReq"></span>
+		</div><div class="col text-center">
+			thirst: [<span id="water"></span>] <span id='thirst'></span>/<span id="thirstReq"></span>		
+		</div><div class="col text-center">
+			sanity: <span id='sanity'></span>/<span id="sanityReq"></span>		
+		</div>
+	</div><div class="row">
+		<div class="col text-center">
+			money: $<span id="money"></span>
+			<span id="moneyDelta"></span>
+		</div><div class="col text-center">
+			social: <span id="social"></span>
+			<span id="socialDelta"></span>
+		</div>
 	</div>
 	<div id="status" class="text-center"></div>
 	<div id="stores"></div>

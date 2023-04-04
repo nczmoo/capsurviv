@@ -2,6 +2,7 @@ class Game{
 	config = new Config();
 	buyingFromStores = [];
 	spendingAtStores = [];
+	
 	constructor(){
 		for (let i = 0; i < this.config.stores.length; i++){
 			this.buyingFromStores.push({food: 0, water: 0});
@@ -20,6 +21,7 @@ class Game{
 		this.buyingFromStores[storeID].water = 0;
 		this.buyingFromStores[storeID].food = 0;
 		this.config.social += storeID;
+		this.config.sanity += this.sanityCheck(storeID, 'stores');
 		this.config.hours --;
 	}
 
@@ -67,8 +69,10 @@ class Game{
 		if (this.config.social < this.config.promotion[socialID]){
 			return;
 		}
+		ui.delta('social', 'red', "-" + this.config.promotion[socialID]);
 		this.config.social -= this.config.promotion[socialID];
-		this.config.promotion[socialID] *= 2;
+		this.config.promotion[socialID] *= 2;		
+		
 		if (!this.config.work[socialID] ){
 			this.config.work[socialID] = true;
 			ui.status("You can now work here.");
@@ -77,6 +81,16 @@ class Game{
 		let newWage = this.config.wages[socialID] * 1.01;
 		ui.status("Your wage went from $" + this.config.wages[socialID] + " to $" + newWage);
 		this.config.wages[socialID] = newWage;
+		
+	}
+
+	sanityCheck(id, where){
+		id = Number(id);
+		
+		if (!this.config.preferences[where].includes(id)){			
+			return 0;
+		}
+		return this.config.preferences[where].indexOf(id) + 1;
 	}
 
 	work(socialClassID){
@@ -85,6 +99,8 @@ class Game{
 		}
 		this.config.money += this.config.wages[socialClassID];
 		this.config.hours --;
+		ui.delta('hours', 'red', -1);
+		ui.delta('money', 'green', "+" + this.config.wages[socialClassID]);
 	}
 
 	yesStore(storeID, what){

@@ -1,7 +1,7 @@
 class Config {
 	day = 1;
     food = 0;
-	foodOptions = ['vegan', 'mixed', 'carnivore'];
+	
 	hours = 10;
 	hoursPerDay = 10;
 	hunger = 0;
@@ -12,8 +12,10 @@ class Config {
 	};
 	promotion = [1, 10, 100];
 	req = {
-		hunger: null, thirst: null
+		hunger: null, sanity: null, thirst: null
 	};
+	restaurantOptions = ['vegan', 'mixed', 'carnivore'];
+	restaurantModifier = [1.5, 1, 2];
 	restaurants = [];
 	sanity = 0;
     social = 1;
@@ -29,7 +31,7 @@ class Config {
 		this.req.hunger = randNum(3, 6);
 		this.req.thirst = randNum(2, 4);
 		this.req.sanity = randNum(2, 5);
-		food.push(this.foodOptions[randNum(0, this.foodOptions.length - 1)]);
+		food.push(randNum(0, this.restaurantOptions.length - 1));
         let storePrice = randNum(1, 2);
         let restaurantPrice = randNum(5, 10);
         for (let i = 0; i < 3; i++){
@@ -39,7 +41,8 @@ class Config {
             restaurantPrice = randNum(restaurantPrice * 2, restaurantPrice * 3);
         }
 		while(1){
-			let option = this.foodOptions[randNum(0, this.foodOptions.length - 1)];
+			let option = randNum(0, this.restaurantOptions.length - 1);
+			
 			if (food[0] != option){
 				food.push(option);
 				break;
