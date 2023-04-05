@@ -12,22 +12,21 @@
 	</style>
 </head>
 <body>
-	<div class="row">		
-		<div class="col text-center">
-			
-			day: <span id="day"></span>		
-			<button id="nextDay" class="verb0 btn btn-link">[ next ]</button>
-		</div><div class="col text-center">
-			hours: <span id="hours"></span> [<span id='time'></span>] 		
-			<span id="hoursDelta"></span>
-		</div>
+	<div class="mb-3 text-center fixed-top">
+		hours: <span id="hours"></span> [<span id='time'></span>] 		
+		<span id="hoursDelta"></span>		
+	</div>
+	<div class=" text-center mt-5">					
+		day: <span id="day"></span>		
+		<button id="nextDay" class="verb0 btn btn-link">[ next ]</button>
+		<input type="checkbox" id="autoNext" class="me-1" checked>auto 'next' at 0h
 	</div><div class='row'>
 		<div class="col text-center">
 			hunger: [<span id="food"></span>] <span id='hunger'></span>/<span id="hungerReq"></span>
 		</div><div class="col text-center">
 			thirst: [<span id="water"></span>] <span id='thirst'></span>/<span id="thirstReq"></span>		
 		</div><div class="col text-center">
-			sanity: <span id='sanity'></span>/<span id="sanityReq"></span>		
+			sanity: <span id='sanity'></span>/<span id="sanityReq"></span><span id="sanityDelta"></span>
 		</div>
 	</div><div class="row">
 		<div class="col text-center">
@@ -38,11 +37,15 @@
 			<span id="socialDelta"></span>
 		</div>
 	</div>
-	<div id="status" class="text-center"></div>
-	<div id="stores"></div>
-	<div id="restaurants"></div>
+	<em><div id="status" class="text-center mt-3 mb-3"></div></em>
+
+
 	<div id="work"></div>
+	<div id="recreation"></div>
+	<div id="stores" class="d-none"></div>
+	
 	<div id="social"></div>
+	<div id="restaurants" class="d-none"></div>
 
 	
 

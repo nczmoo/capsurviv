@@ -45,7 +45,11 @@ Social
 
 
 TO DO
-    Spawn with an amount of time that you have.
-    Spawn with a hunger, thirst, and sanity requirement.
-    Spawn with sanity preferences of type of food at a restaurant. +2, +1, +0
-    Buy/Sell (food, restuarants, work, social)    
+    X Spawn with an amount of time that you have.
+    X Spawn with a hunger, thirst, and sanity requirement.
+    X Spawn with sanity preferences of type of food at a restaurant. +2, +1, +0
+    X Buy/Sell (food, restuarants, work, social)    
+    Housing
+    Implement restaurants
+    create a toggle option to let players choose between buying days of groceries and # of groceries
+    

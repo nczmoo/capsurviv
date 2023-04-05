@@ -5,15 +5,20 @@ class Config {
 	hours = 10;
 	hoursPerDay = 10;
 	hunger = 0;
-	money = 0;	
+	money = 0;		
 	penalty = 10;
 	preferences = {
 
 	};
 	promotion = [1, 10, 100];
+	raise = .03;
 	req = {
 		hunger: null, sanity: null, thirst: null
 	};
+	recreation = ['park', 'clubbing', 'movies'];
+	recreationCosts = [0, null, null ];
+	recreationHours = [1, 4, 3];
+	recreationToday = [0, 0, 0];
 	restaurantOptions = ['vegan', 'mixed', 'carnivore'];
 	restaurantModifier = [1.5, 1, 2];
 	restaurants = [];
@@ -26,11 +31,15 @@ class Config {
     wages = [];
 	water = 0;
 	work = [false, false, false];
+	workRep = [0, 0, 0];
+	workToday = [0, 0, 0];
     constructor(){        
-        let food = [], restaurants = [], stores =[];
+		this.recreationCosts[this.recreation.indexOf('clubbing')] = randNum (50, 100);
+		this.recreationCosts[this.recreation.indexOf('movies')] = randNum (15, 30);
+        let food = [], restaurants = [], stores =[], recreation = [];
 		this.req.hunger = randNum(3, 6);
 		this.req.thirst = randNum(2, 4);
-		this.req.sanity = randNum(2, 5);
+		this.req.sanity = randNum(2, 3);
 		food.push(randNum(0, this.restaurantOptions.length - 1));
         let storePrice = randNum(1, 2);
         let restaurantPrice = randNum(5, 10);
@@ -50,17 +59,20 @@ class Config {
 		}
 		restaurants.push(randNum(0, 2));
 		stores.push(randNum(0, 2));
+		recreation.push(randNum(0, this.recreation.length - 1));
 		while(1){
+			let recreationOption = randNum(0, this.recreation.length - 1);
 			let restaurantOption = randNum(0, 2);
 			let storeOption = randNum(0, 2);
-			if (storeOption != stores[0] && restaurantOption != restaurants[0]){
+			if (storeOption != stores[0] && restaurantOption != restaurants[0] && recreationOption != recreation[0]){
+				recreation.push(recreationOption);
 				restaurants.push(restaurantOption);
 				stores.push(storeOption);
 				break;
 			}
 		}
 		this.preferences = {
-			food: food, restaurants: restaurants, stores: stores
+			food: food, recreation: recreation, restaurants: restaurants, stores: stores
 		};
         let wage = randNum(8, 12);
         for (let i in this.socialClass){            
